@@ -89,21 +89,21 @@ const Formulario = ({ citas, setCitas, guardarMostrarForm, guardarCitasStorage }
         <>
             <ScrollView style={styles.formulario}>
                 <View>
-                    <Text style={styles.label}>Paciente:</Text>
+                    <Text style={styles.label}>Cliente:</Text>
                     <TextInput
                         style={styles.input}
                         onChangeText={texto => guardarPaciente(texto)}
                     />
                 </View>
                 <View>
-                    <Text style={styles.label}>Dueño:</Text>
+                    <Text style={styles.label}>Producto:</Text>
                     <TextInput
                         style={styles.input}
                         onChangeText={texto => guardarPropietario(texto)}
                     />
                 </View>
                 <View>
-                    <Text style={styles.label}>Teléfono Contacto:</Text>
+                    <Text style={styles.label}>Precio Unitario:</Text>
                     <TextInput
                         style={styles.input}
                         onChangeText={texto => guardarTelefono(texto)}
@@ -111,37 +111,7 @@ const Formulario = ({ citas, setCitas, guardarMostrarForm, guardarCitasStorage }
                     />
                 </View>
                 <View>
-                    <Text style={styles.label}>Fecha:</Text>
-                    <Button title="Seleccionar Fecha" onPress={showDatePicker} />
-                    <DateTimePickerModal
-                        isVisible={isDatePickerVisible}
-                        mode="date"
-                        onConfirm={confirmarFecha}
-                        onCancel={hideDatePicker}
-                        locale='es_ES'
-                        headerTextIOS="Elige la fecha"
-                        cancelTextIOS="Cancelar"
-                        confirmTextIOS="Confirmar"
-                    />
-                    <Text>{fecha}</Text>
-                </View>
-                <View>
-                    <Text style={styles.label}>Hora:</Text>
-                    <Button title="Seleccionar Hora" onPress={showTimePicker} />
-                    <DateTimePickerModal
-                        isVisible={isTimePickerVisible}
-                        mode="time"
-                        onConfirm={confirmarHora}
-                        onCancel={hideTimePicker}
-                        locale='es_ES'
-                        headerTextIOS="Elige una Hora"
-                        cancelTextIOS="Cancelar"
-                        confirmTextIOS="Confirmar"
-                    />
-                    <Text>{hora}</Text>
-                </View>
-                <View>
-                    <Text style={styles.label}>Síntomas:</Text>
+                    <Text style={styles.label}>Total:</Text>
                     <TextInput
                         multiline
                         style={styles.input}
@@ -151,7 +121,7 @@ const Formulario = ({ citas, setCitas, guardarMostrarForm, guardarCitasStorage }
                 <View>
                     <TouchableHighlight onPress={() => crearNuevaCita()}
                         style={styles.btnSubmit}>
-                        <Text style={styles.textoSubmit}>Crear Nueva Cita</Text>
+                        <Text style={styles.textoSubmit}>Crear Nueva Factura</Text>
                     </TouchableHighlight>
                 </View>
             </ScrollView>

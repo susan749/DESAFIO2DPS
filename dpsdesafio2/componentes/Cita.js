@@ -8,15 +8,15 @@ const Cita = ({ item, eliminarPaciente }) => {
     return (
         <View style={styles.cita}>
             <View>
-                <Text style={styles.label}>Paciente: </Text>
+                <Text style={styles.label}>Cliente: </Text>
                 <Text style={styles.texto}>{item.paciente}</Text>
             </View>
             <View>
-                <Text style={styles.label}>Propietario: </Text>
+                <Text style={styles.label}>Producto: </Text>
                 <Text style={styles.texto}>{item.propietario}</Text>
             </View>
             <View>
-                <Text style={styles.label}>Síntomas: </Text>
+                <Text style={styles.label}>Total: </Text>
                 <Text style={styles.texto}>{item.sintomas}</Text>
             </View>
             <View>

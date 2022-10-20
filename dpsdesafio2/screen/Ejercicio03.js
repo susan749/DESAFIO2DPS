@@ -179,7 +179,7 @@ const Ejercicio03 = () => {
   return (
     <TouchableWithoutFeedback onPress={() => cerrarTeclado()}>
       <View style={styles.contenedor}>
-        <Text style={styles.titulo}>Administrador de Citas</Text>
+        <Text style={styles.titulo}>Mimi S.A de C.V</Text>
         <View>
           <TouchableHighlight
             onPress={() => mostrarFormulario()}
@@ -187,14 +187,14 @@ const Ejercicio03 = () => {
           >
             <Text style={styles.textoMostrarForm}>
               {" "}
-              {mostrarform ? "Cancelar CrearCita" : "Crear Nueva Cita"}{" "}
+              {mostrarform ? "Cancelar CrearFactura" : "Crear Nueva Factura"}{" "}
             </Text>
           </TouchableHighlight>
         </View>
         <View style={styles.contenido}>
           {mostrarform ? (
             <>
-              <Text style={styles.titulo}>Crear Nueva Cita</Text>
+              <Text style={styles.titulo}>Factura</Text>
               <Formulario
                 citas={citas}
                 setCitas={setCitas}
@@ -207,8 +207,8 @@ const Ejercicio03 = () => {
               <Text style={styles.titulo}>
                 {" "}
                 {citas.length > 0
-                  ? "Administra tus citas"
-                  : "No hay citas, agrega una"}{" "}
+                  ? "Administra tus ventas"
+                  : "No hay registro, agregar uno"}{" "}
               </Text>
               <FlatList
                 style={styles.listado}
