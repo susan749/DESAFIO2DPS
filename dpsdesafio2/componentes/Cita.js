@@ -8,15 +8,15 @@ const Cita = ({ item, eliminarPaciente }) => {
     return (
         <View style={styles.cita}>
             <View>
-                <Text style={styles.label}>Cliente: </Text>
+                <Text style={styles.label}>Nombre producto: </Text>
                 <Text style={styles.texto}>{item.paciente}</Text>
             </View>
             <View>
-                <Text style={styles.label}>Producto: </Text>
+                <Text style={styles.label}> Cantidad de Producto: </Text>
                 <Text style={styles.texto}>{item.propietario}</Text>
             </View>
-            <View>
-                <Text style={styles.label}>Total: </Text>
+           <View>
+                <Text style={styles.label}>Precio Unitario: </Text>
                 <Text style={styles.texto}>{item.sintomas}</Text>
             </View>
             <View>
@@ -31,8 +31,8 @@ const Cita = ({ item, eliminarPaciente }) => {
 }
 const styles = StyleSheet.create({
     cita: {
-        backgroundColor: '#FFF',
-        borderBottomColor: '#e1e1e1',
+        backgroundColor: '#FFF5A5',
+        borderBottomColor: '#222831',
         borderStyle: 'solid',
         borderBottomWidth: 1,
         paddingVertical: 20,
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
         marginVertical: 10
     },
     textoEliminar: {
-        color: '#FFF',
+        color: '#222831',
         fontWeight: 'bold',
         textAlign: 'center'
     }
