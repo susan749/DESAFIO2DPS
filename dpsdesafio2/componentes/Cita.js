@@ -1,10 +1,27 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import { Text, StyleSheet, View, TouchableHighlight } from 'react-native';
 const Cita = ({ item, eliminarPaciente }) => {
+    const total = item.propietario*item.sintomas
+    const [porcentaje, setPorcentaje] = useState(0)
     const dialogoEliminar = id => {
         console.log('eliminando....', id);
         eliminarPaciente(id);
     }
+
+    useEffect(() => {
+        if(item.propietario>=15 && item.propietario<=49){
+            setPorcentaje(0.05)
+        }
+        else if(item.propietario>=50 && item.propietario<=79){
+            setPorcentaje(0.13)
+        }
+        else if(item.propietario>=80){
+            setPorcentaje(0.25)
+        }
+    },[item.propietario])
+    const totald = porcentaje*total
+    const rtotal = total - totald
+
     return (
         <View style={styles.cita}>
             <View>
@@ -18,6 +35,22 @@ const Cita = ({ item, eliminarPaciente }) => {
            <View>
                 <Text style={styles.label}>Precio Unitario: </Text>
                 <Text style={styles.texto}>{item.sintomas}</Text>
+            </View>
+            <View>
+                <Text style={styles.label}>Total: </Text>
+                <Text style={styles.texto}>{total}</Text>
+            </View>
+            <View>
+                <Text style={styles.label}>Descuento aplicado: </Text>
+                <Text style={styles.texto}>{porcentaje}</Text>
+            </View>
+            <View>
+                <Text style={styles.label}>Total de Descuento: </Text>
+                <Text style={styles.texto}>{totald}</Text>
+            </View>
+            <View>
+                <Text style={styles.label}>Total Final: </Text>
+                <Text style={styles.texto}>{rtotal}</Text>
             </View>
             <View>
                 <TouchableHighlight onPress={() => dialogoEliminar(item.id)}
