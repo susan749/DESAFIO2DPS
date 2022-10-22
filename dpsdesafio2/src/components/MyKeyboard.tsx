@@ -73,6 +73,11 @@ export default function MyKeyboard() {
             clear();
             setResult(parseInt(secondNumber) / parseInt(firstNumber));
             break;
+            case "raiz":
+              clear();
+              setResult(Math.sqrt(parseInt (firstNumber)));
+              break;
+              
         default:
             clear();
             setResult(0);
@@ -101,6 +106,7 @@ export default function MyKeyboard() {
         <Button title="+/-" isGray onPress={() => handleOperationPress("+/-")} />
         <Button title="％" isGray onPress={() => handleOperationPress("％")} />
         <Button title="÷" isBlue onPress={() => handleOperationPress("/")} />
+        <Button title="raiz" isBlue onPress={() => handleOperationPress("raiz")} />
       </View>
       <View style={Styles.row}>
         <Button title="7" onPress={() => handleNumberPress("7")} />
@@ -124,6 +130,7 @@ export default function MyKeyboard() {
         <Button title="." onPress={() => handleNumberPress(".")} />
         <Button title="0" onPress={() => handleNumberPress("0")} />
         <Button title="⌫" onPress={() => setFirstNumber(firstNumber.slice(0, -1))} />
+        {/* <Button title="#" onPress={() => handleOperationPress("#")} /> */}
         <Button title="=" isBlue onPress={() => getResult()} />
       </View>
     </View>
