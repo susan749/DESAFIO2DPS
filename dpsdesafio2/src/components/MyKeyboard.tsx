@@ -9,12 +9,30 @@ export default function MyKeyboard() {
   const [secondNumber, setSecondNumber] = React.useState("");
   const [operation, setOperation] = React.useState("");
   const [result, setResult] = React.useState<Number | null >(null);
+  const [dado, setfactorial] = React.useState(Number);
 
   const handleNumberPress = (buttonValue: string) => {
     if (firstNumber.length < 10) {
       setFirstNumber(firstNumber + buttonValue);
     }
   };
+
+  const calcular = m => {
+    if (m === 0) return 1;
+       let f = 1;
+       for (let i = 1; i < m; i++) {
+           f = f * (i + 1);
+       }
+       return f; }
+
+
+
+
+
+
+
+
+
 
   const handleOperationPress = (buttonValue: string) => {
     setOperation(buttonValue);
@@ -28,6 +46,7 @@ export default function MyKeyboard() {
     setOperation("");
     setResult(null);
   };
+
 
   const firstNumberDisplay = () => {
     if (result !== null) {
@@ -77,6 +96,10 @@ export default function MyKeyboard() {
               clear();
               setResult(Math.sqrt(parseInt (firstNumber)));
               break;
+         case "!":
+              clear();
+              setResult(calcular(parseInt (firstNumber)));
+              break;
               
         default:
             clear();
@@ -104,15 +127,17 @@ export default function MyKeyboard() {
       <View style={Styles.row}>
         <Button title="C" isGray onPress={clear} />
         <Button title="+/-" isGray onPress={() => handleOperationPress("+/-")} />
-        <Button title="％" isGray onPress={() => handleOperationPress("％")} />
+        {/* <Button title="％" isGray onPress={() => handleOperationPress("％")} /> */}
         <Button title="÷" isBlue onPress={() => handleOperationPress("/")} />
         <Button title="raiz" isBlue onPress={() => handleOperationPress("raiz")} />
+        
       </View>
       <View style={Styles.row}>
         <Button title="7" onPress={() => handleNumberPress("7")} />
         <Button title="8" onPress={() => handleNumberPress("8")} />
         <Button title="9" onPress={() => handleNumberPress("9")} />
         <Button title="×" isBlue onPress={() => handleOperationPress("*")} />
+        <Button title="!" isBlue onPress={() => handleOperationPress("!")} />
       </View>
       <View style={Styles.row}>
         <Button title="4" onPress={() => handleNumberPress("4")} />
